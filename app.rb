@@ -8,7 +8,8 @@ class DocumentGifApp < Sinatra::Base
 
   post '/' do
     pdf = Document.new(params)
-    "PDF (#{pdf.page_count} pages) SUCCESSFULLY UPLOADED!"
+    pdf.convert_pages
+    "PDF (#{pdf.page_count} pages) SUCCESSFULLY UPLOADED! and CONVERTED"
   end
 
 end

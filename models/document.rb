@@ -1,15 +1,19 @@
 class Document
 
   def initialize(params)
-    @pdf = Grim.reap(params[:document][:tempfile].path)
+    @pdf = DocConvert.new(params[:document][:tempfile].path)
   end
 
-  def gif
+  def to_gif
     "HELLO? YES THIS IS DOG"
   end
 
+  def convert_pages
+    @pdf.convert_pages
+  end
+
   def page_count
-    @pdf.count  
+    @pdf.page_count  
   end
 
   private

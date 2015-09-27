@@ -10,7 +10,6 @@ gem 'pry'
 
 # Features
 gem 'rmagick'
-gem 'grim'
 gem 'mini_magick'
 
 
