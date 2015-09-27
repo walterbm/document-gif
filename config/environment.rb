@@ -1,4 +1,4 @@
 require 'bundler'
 Bundler.require(:default)
 
-# require_relative '../models'
+require_relative '../models/document.rb'
