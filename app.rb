@@ -2,6 +2,6 @@ require_relative 'config/environment'
 
 class DocumentGifApp < Sinatra::Base
   get '/' do
-    "HELLO WORLD!"
+    erb :hello_world
   end
 end
