@@ -8,7 +8,7 @@ class Document
     "HELLO? YES THIS IS DOG"
   end
 
-  def convert_pages
+  def convert
     @pdf.convert_pages
   end
 
@@ -19,6 +19,5 @@ class Document
   private
 
     def doc_params
-
     end
 end
