@@ -9,7 +9,7 @@ class DocumentGifApp < Sinatra::Base
   post '/' do
     pdf = Document.new(params_file_path)
     pdf.to_gif
-    "PDF (#{pdf.page_count} pages) SUCCESSFULLY UPLOADED! and CONVERTED"
+    "PDF SUCCESSFULLY UPLOADED! & CONVERTED!"
   end
 
   get '/download' do

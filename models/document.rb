@@ -1,32 +1,22 @@
 class Document
 
-  def initialize(file_path)
+  def initialize(file_path,interval=200)
     @pdf = MiniMagick::Image.open(file_path)
+    @interval = interval
   end
 
   def to_gif
-    convert_pages
     convert_to_animated_gif
-  end
-
-  def convert_pages
-    @pdf.pages.each_with_index do |page, index|
-      page.write("./temp/test#{"%03d" % index}.gif")
-    end
-  end
-
-  def page_count
-    @pdf.pages.count
+    cleanup
   end
 
   def convert_to_animated_gif
     MiniMagick::Tool::Convert.new do |convert|
-      convert.delay(120) 
-      convert << "./temp/test*.gif"
+      convert.delay(@interval) 
+      convert << @pdf.path
       convert << "-loop" << "0"
       convert << "./result/animated.gif"
-    end
-    FileUtils.rm_rf(Dir.glob('temp/*'))
+    end 
   end
 
 end
