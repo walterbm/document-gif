@@ -6,15 +6,11 @@ class Document
   end
 
   def to_gif
-    convert_to_animated_gif
-    cleanup
-  end
-
-  def convert_to_animated_gif
-    MiniMagick::Tool::Convert.new do |convert|
+    MiniMagick::Tool::Convert.new(false) do |convert|
       convert.delay(@interval) 
       convert << @pdf.path
       convert << "-loop" << "0"
+      convert.resize("200%")
       convert << "./result/animated.gif"
     end 
   end
