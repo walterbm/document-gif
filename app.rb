@@ -10,7 +10,7 @@ class DocumentGifApp < Sinatra::Base
     pdf = Document.new(params_file_path)
     pdf.to_gif
     @file_name = pdf.name
-    erb :result
+    erb :result, :layout => false
   end
 
   get '/:file' do 
