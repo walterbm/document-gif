@@ -14,6 +14,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
-/tmp
+/tmp/*.gif
 /temp/*
 /result/*.gif
