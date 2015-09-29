@@ -1,5 +1,10 @@
 <h1>Upload a File!</h1>
 <form action="/" method="post" enctype="multipart/form-data">
-  <input type="file" name="document" accept=".pdf">
-  <input type="submit">
+  <input id="uploadFile" placeholder="Choose File" disabled="disabled">
+  <div class="fileUpload btn btn-default">
+    <span>Upload</span>
+    <input type="file" id="uploadBtn" class="upload" name="document" accept=".pdf">
+  </div>
+  <button type="submit" class="btn btn-warning">Convert</button>
 </form>
+

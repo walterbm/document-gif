@@ -21,8 +21,6 @@ class DocumentGifApp < Sinatra::Base
     send_file "./tmp/#{params[:file]}", type: :gif , disposition: :attachment
   end
 
-
-
   private
 
     def params_file_path
