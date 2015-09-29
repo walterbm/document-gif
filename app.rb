@@ -9,12 +9,19 @@ class DocumentGifApp < Sinatra::Base
   post '/' do
     pdf = Document.new(params_file_path)
     pdf.to_gif
-    "PDF SUCCESSFULLY UPLOADED! & CONVERTED!"
+    @file_name = pdf.name
+    erb :result
   end
 
-  get '/download' do
-    send_file './result/animated.gif', type: :gif #, disposition: :attachment
+  get '/:file' do 
+     send_file "./tmp/#{params[:file]}", type: :gif, disposition: :inline
   end
+
+  get '/download/:file' do
+    send_file "./tmp/#{params[:file]}", type: :gif , disposition: :attachment
+  end
+
+
 
   private
 

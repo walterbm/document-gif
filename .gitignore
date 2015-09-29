@@ -16,4 +16,4 @@
 !/log/.keep
 /tmp
 /temp/*
-/result/*
+/result/*.gif
