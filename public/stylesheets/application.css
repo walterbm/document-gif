@@ -1,10 +1,10 @@
 html{
   min-height: 100%;
-  background: -webkit-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* IE10 */
-  background:      -o-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* Opera 11.10+ */
-  background:         linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* W3C */
+  background: -webkit-linear-gradient(0deg, #e65245 10%, #e43a15 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(0deg, #e65245 10%, #e43a15 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(0deg, #e65245 10%, #e43a15 90%); /* IE10 */
+  background:      -o-linear-gradient(0deg, #e65245 10%, #e43a15 90%); /* Opera 11.10+ */
+  background:         linear-gradient(0deg, #e65245 10%, #e43a15 90%); /* W3C */
 }
 body{
   margin: 5% 20%;
@@ -15,8 +15,6 @@ h1, h3{
   text-align: center;
   font-family: 'Press Start 2P', cursive;
   color: white;
-}
-h1{
   text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
@@ -29,13 +27,21 @@ h1{
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
+}
+h1{
   font-size: 3em;
 }
 h3{
-  font-size: 1em;
+  font-size: 1.5em;
 }
 img{
   border: 2px solid white;
+  display: block;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
 }
 #wrapper{
   margin: 0 auto;
@@ -89,4 +95,7 @@ form{
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
+}
+#uploadFile{
+  padding: 4px;
 }

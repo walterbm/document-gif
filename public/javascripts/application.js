@@ -8,12 +8,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   uploadButton.onchange = function(){
     uploadFileField.value = this.files[0].name;
+    submitRequest();
   };
 
-  form.onsubmit = function(event) {
-    event.preventDefault();
-
-    submitButton.innerHTML = "Converting...";
+  function submitRequest() {
+    uploadButton.previousElementSibling.innerHTML = "Converting...";
     var file = fileSelect.files[0];
     var formData = new FormData();
 
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     xhr.onload = function () {
       if (xhr.status === 200) {
-        submitButton.innerHTML = 'Convert';
+        uploadButton.previousElementSibling.innerHTML = "Upload";
         document.getElementById("convertedImage").innerHTML = xhr.response;
       }
       else {
@@ -34,6 +33,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     xhr.send(formData);
 
-  };
+  }
 
 });
