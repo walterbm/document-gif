@@ -1,7 +1,48 @@
-h1{
-  color: red;
+html{
+  min-height: 100%;
+  background: -webkit-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* IE10 */
+  background:      -o-linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* Opera 11.10+ */
+  background:         linear-gradient(0deg, #F0C27B 10%, #4B1248 90%); /* W3C */
 }
+body{
+  margin: 5% 20%;
+  font-family: 'Yantramanav', sans-serif;
 
+}
+h1, h3{
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+h1{
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  font-size: 3em;
+}
+h3{
+  font-size: 1em;
+}
+img{
+  border: 2px solid white;
+}
+#wrapper{
+  margin: 0 auto;
+}
+form{
+  text-align: center;
+}
 .btn{
   display: inline-block;
   padding: 6px 12px;
@@ -23,19 +64,16 @@ h1{
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-upload{
   color: #333;
   background-color: #fff;
   border-color: #ccc;
 }
-
 .btn-convert{
   color: #fff;
   background-color: #f0ad4e;
   border-color: #eea236;
 }
-
 .fileUpload {
     position: relative;
     overflow: hidden;
