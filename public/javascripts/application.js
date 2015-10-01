@@ -23,16 +23,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     xhr.onload = function () {
       if (xhr.status === 200) {
-        uploadButton.previousElementSibling.innerHTML = "Upload";
-        document.getElementById("convertedImage").innerHTML = xhr.response;
+        appendImageToPage(xhr.response);
       }
       else {
         alert('An error occurred!');
       }
     };
-
     xhr.send(formData);
+  }
 
+  function appendImageToPage(imageHTMLResponse){
+    uploadButton.previousElementSibling.innerHTML = "Upload";
+    document.getElementById("convertedImage").innerHTML = imageHTMLResponse;
   }
 
 });

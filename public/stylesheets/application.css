@@ -10,31 +10,21 @@ html{
   background:         linear-gradient(0deg, #e65245 10%, #e43a15 90%); /* W3C */
 }
 body{
-  margin: 5% 20%;
-  font-family: 'Yantramanav', sans-serif;
+  margin: 5% 5%;
+  font-family: 'SilkScreen', sans-serif;
 }
 h1, h3{
   text-align: center;
   font-family: 'SilkScreen';
   color: white;
-  text-shadow: 0 1px 0 #ccc,
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
+  text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);
 }
 h1{
   font-size: 4.5em;
 }
 h3{
   font-size: 1.5em;
+  text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);
 }
 img{
   border: 2px solid white;
@@ -44,11 +34,24 @@ img{
      -moz-box-shadow: 0 10px 6px -6px #777;
           box-shadow: 0 10px 6px -6px #777;
 }
-#wrapper{
-  margin: 0 auto;
+img.icon{
+  border: none;
+  padding-right: 5px;
+  display: inline;
 }
 form{
   text-align: center;
+}
+i.fa{
+  color: white;
+  font-size: 1.7em;
+  text-shadow: 0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);
+}
+i.fa:hover{
+  transform: rotate(-20deg);
+}
+#wrapper{
+  margin: 0 auto;
 }
 .btn{
   display: inline-block;
@@ -76,15 +79,18 @@ form{
   background-color: #fff;
   border-color: #ccc;
 }
-.btn-convert{
-  color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+.btn-download{
+  display: block;
+  margin: 0px auto 15px auto;
+  width: 10%;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
 }
 .fileUpload {
     position: relative;
     overflow: hidden;
-    margin: 10px;
+    margin: 10px 5px;
 }
 .fileUpload input.upload {
     position: absolute;
@@ -92,7 +98,7 @@ form{
     right: 0;
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 2.2em;
     cursor: pointer;
     opacity: 0;
     filter: alpha(opacity=0);
@@ -101,5 +107,6 @@ form{
   padding: 4px;
 }
 #download{
-
+  color: black;
+  padding: 10px 15px;
 }
