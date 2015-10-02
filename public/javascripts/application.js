@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var submitButton = document.getElementById("convertButton");
   var fileSelect = document.getElementById("uploadButton");
   var cog = document.getElementById("settingsCog");
+  var loader = document.getElementById("loader");
 
   uploadButton.onchange = function(){
     uploadFileField.value = this.files[0].name;
@@ -15,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   function submitRequest() {
     uploadButton.previousElementSibling.innerHTML = "Converting...";
+    loader.style.display = "block";
+
     var file = fileSelect.files[0];
     var size = getRadioValue();
     var interval = document.getElementById("intervalField").value;
@@ -30,9 +33,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     xhr.onload = function () {
       if (xhr.status === 200) {
         appendImageToPage(xhr.response);
+        loader.style.display = "none";
       }
       else {
-        alert('An error occurred!');
+        alert('Sorry, the conversion failed!');
       }
     };
     xhr.send(formData);
