@@ -7,7 +7,7 @@ class DocumentGifApp < Sinatra::Base
   end
 
   post '/' do
-    pdf = Document.new(params_file_path)
+    pdf = Document.new(params_file_path,params_size,params_interval)
     pdf.to_gif
     @file_name = pdf.name
     erb :result, :layout => false
@@ -25,6 +25,14 @@ class DocumentGifApp < Sinatra::Base
 
     def params_file_path
       params[:document][:tempfile].path
+    end
+
+    def params_size
+      params[:size]
+    end
+
+    def params_interval
+      params[:interval]
     end
 
 end

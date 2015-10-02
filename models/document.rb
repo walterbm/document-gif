@@ -1,10 +1,10 @@
 class Document
   attr_reader :name
 
-  def initialize(file_path,interval=200,size="100%")
+  def initialize(file_path,size="100",interval=200)
     @pdf = MiniMagick::Image.open(file_path)
     @interval = interval
-    @size = size
+    @size = "#{size}%" 
   end
 
   def to_gif

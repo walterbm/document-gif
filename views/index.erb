@@ -1,13 +1,31 @@
 <h1>Document.GIF</h1>
 <h3>upload a pdf!</h3>
 <div id="wrapper">
-  <form action="/" method="POST" enctype="multipart/form-data" id="fileForm">
-    <input id="uploadFile" placeholder="Choose File" disabled="disabled">
+  <form action="/" method="POST" enctype="multipart/form-data" id="fileForm" class="animated bounce">
+    <input id="uploadFile" placeholder="Choose a File!" disabled="disabled">
     <div class="fileUpload btn btn-upload">
       <span><img class="icon" src="/images/download.gif">Convert</span>
       <input type="file" id="uploadButton" class="upload" name="document" accept=".pdf">
     </div>
-    <i class="fa fa-cog"></i>
+    <i id="settingsCog" class="fa fa-cog"></i>
+    <div id="settingWrapper" class="animated">
+      <div id="settings">
+        <div id="size">
+          Size:
+          <br>
+          <input type="radio" name="size" value="20">20%
+          <br>
+          <input type="radio" name="size" value="50" >50%
+          <br>
+          <input type="radio" name="size" value="100" checked>Original
+        </div>
+        <div id="interval">
+          Interval:
+          <input id="intervalField" type="text" name="interval" value="200">ms
+        </div>
+      </div>
+    </div>
+
   </form>
 
   <div id="convertedImage"></div>
