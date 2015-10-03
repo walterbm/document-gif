@@ -33,10 +33,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     xhr.onload = function () {
       if (xhr.status === 200) {
         appendImageToPage(xhr.response);
-        loader.style.display = "none";
       }
       else {
-        alert('Sorry, the conversion failed!');
+        serverFailure();
       }
     };
     xhr.send(formData);
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function appendImageToPage(imageHTMLResponse){
     uploadButton.previousElementSibling.innerHTML = "<img class='icon' src='/images/download.gif'>Convert";
     document.getElementById("convertedImage").innerHTML = imageHTMLResponse;
+    loader.style.display = "none";
   }
 
   function getRadioValue(){
@@ -54,6 +54,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return radios[i].value;
       }
     }
+  }
+
+  function serverFailure(){
+    alert('Sorry, the conversion failed!');
+    loader.style.display = "none";
   }
 
   function showSettings(){

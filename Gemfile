@@ -12,4 +12,7 @@ gem 'pry'
 gem 'rmagick'
 gem 'mini_magick'
 
+# Background Worker
+gem 'sidekiq'
+
 
