@@ -7,9 +7,8 @@ class DocumentGifApp < Sinatra::Base
   end
 
   post '/' do
-    pdf = Document.new(params_file_path,params_size,params_interval)
-    pdf.to_gif
-    @file_name = pdf.name
+    @file_name = DocprocessJob.async.perform(params_file_path,params_size,params_interval)
+  
     erb :result, :layout => false
   end
 

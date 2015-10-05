@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # Rack 
+gem 'thin'
 gem 'shotgun'
 gem 'sinatra'
 
@@ -8,11 +9,14 @@ gem 'sinatra'
 gem 'rspec'
 gem 'pry'
 
-# Features
+# Image Manipulation
 gem 'rmagick'
 gem 'mini_magick'
 
-# Background Worker
-gem 'sidekiq'
+# Websockets
+gem 'em-websocket'
+
+# Background Work
+gem 'sucker_punch', '~> 1.0'
 
 
