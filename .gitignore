@@ -16,3 +16,6 @@
 !/log/.keep
 /tmp/*.gif
 /complete/*.gif
+
+# Ignore todo
+TODO.md
