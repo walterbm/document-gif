@@ -1,8 +1,6 @@
 require_relative 'config/environment'
 
 class DocumentGifApp < Sinatra::Base
-  register Sinatra::Async
-
   set :server, :thin
   connections = []
 
@@ -14,7 +12,7 @@ class DocumentGifApp < Sinatra::Base
     pdf = Document.new(params_file_path,params_size,params_interval)
     @file_name = pdf.gif_file_name
     DocprocessJob.new.async.perform(pdf)
-    
+
     render = erb :response, :layout => false
 
     content_type :json
