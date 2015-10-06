@@ -14,26 +14,29 @@ class DocumentGifApp < Sinatra::Base
     pdf = Document.new(params_file_path,params_size,params_interval)
     @file_name = pdf.gif_file_name
     DocprocessJob.new.async.perform(pdf)
+    
+    render = erb :response, :layout => false
 
-    erb :response, :layout => false
+    content_type :json
+    { :html => render, :file_name => @file_name }.to_json
   end
 
   get '/stream/:file', provides: 'text/event-stream' do
     stream(:keep_open) do |out|
       connections << out
-      # FileCheck.complete?(params[:file],out)
-      out << "data: #{params[:file]} \n\n"
+      FilecheckJob.new.async.perform(params[:file],out)
+
       # purge dead connections
       connections.reject!(&:closed?)
     end
   end
 
   get '/gif/:file' do 
-     send_file "./tmp/#{params[:file]}", type: :gif, disposition: :inline
+     send_file "./complete/#{params[:file]}", type: :gif, disposition: :inline
   end
 
   get '/download/:file' do
-    send_file "./tmp/#{params[:file]}", type: :gif , disposition: :attachment
+    send_file "./complete/#{params[:file]}", type: :gif , disposition: :attachment
   end
 
   private

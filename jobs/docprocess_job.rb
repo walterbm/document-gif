@@ -6,6 +6,6 @@ class DocprocessJob
     @pdf.to_gif
     @pdf.gif_file_name
     FileUtils.mv(@pdf.gif.path, "./complete/#{@pdf.gif_file_name}")
-    puts "DONEEEEE!!!!!!!!"
   end
+  
 end

@@ -13,6 +13,9 @@ gem 'pry'
 gem 'rmagick'
 gem 'mini_magick'
 
+# JSON
+gem 'json'
+
 # Websockets/LongPolling
 gem 'async_sinatra'
 
