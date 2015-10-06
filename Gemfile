@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Rack 
 gem 'thin'
-gem 'shotgun'
 gem 'sinatra'
 
 # Testing
@@ -15,9 +14,6 @@ gem 'mini_magick'
 
 # JSON
 gem 'json'
-
-# Websockets/LongPolling
-gem 'async_sinatra'
 
 # Background Work
 gem 'sucker_punch', '~> 1.0'
