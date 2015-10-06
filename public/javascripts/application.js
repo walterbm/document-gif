@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   };
   cog.onclick = showSettings;
 
+  var es = new EventSource('/stream/hello');
+  es.onmessage = function(e) { alert(e.data); };
+
   function submitRequest() {
     uploadButton.previousElementSibling.innerHTML = "Converting...";
     loader.style.display = "block";
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     xhr.onload = function () {
       if (xhr.status === 200) {
+        debugger;
         appendImageToPage(xhr.response);
       }
       else {

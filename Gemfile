@@ -13,8 +13,8 @@ gem 'pry'
 gem 'rmagick'
 gem 'mini_magick'
 
-# Websockets
-gem 'em-websocket'
+# Websockets/LongPolling
+gem 'async_sinatra'
 
 # Background Work
 gem 'sucker_punch', '~> 1.0'

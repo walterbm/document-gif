@@ -1,15 +1,15 @@
 class Document
-  attr_reader :gif_file_name
+  attr_reader :gif_file_name, :gif
 
   def initialize(file_path,size="100",interval=200)
     @pdf = MiniMagick::Image.open(file_path)
     @interval = interval
     @size = "#{size}%" 
+    @gif = Tempfile.new(["animated",".gif"], "./tmp")
+    @gif_file_name = File.basename(@gif.path)
   end
 
   def to_gif
-    @gif = Tempfile.new(["animated",".gif"], "./tmp")
-    @gif_file_name = File.basename(@gif.path)
     begin
       convert_pdf
     ensure
