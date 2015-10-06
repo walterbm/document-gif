@@ -4,9 +4,10 @@
 
 Document.gif was created to...convert PDF documents to animated GIF. Simple. Probably unnecessary. But quite a fun project. 
 
-## Screen shot
+## Demo
 
 ![doc2gif](screenshots/doc2gif.gif "Short animated GIF of Document.gif in action.")
+
 Short animated GIF of Document.gif in action.
 
 ## Features
