@@ -19,3 +19,6 @@
 
 # Ignore todo
 TODO.md
+
+# Ignore OSX Files
+.DS_Store

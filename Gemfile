@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-# Rack 
+ruby '2.2.4'
+
+# Rack
 gem 'thin'
 gem 'sinatra'
 
@@ -17,5 +19,3 @@ gem 'json'
 
 # Background Work
 gem 'sucker_punch', '~> 1.0'
-
-
